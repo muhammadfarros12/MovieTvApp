@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.farroos.movietvapp_submissionbajp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MovieTVAppSubmissionBAJP"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity
+            android:name=".ui.splashScreen.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MovieTVAppSubmissionBAJP.NoActionBar2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName=".ui.home.HomeActivity"
+            android:theme="@style/Theme.MovieTVAppSubmissionBAJP.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.farroos.movietvapp_submissionbajp.ui.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="true">
+
+        </activity>
+    </application>
+
+</manifest>
