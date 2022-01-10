@@ -180,7 +180,7 @@ object DataDummy {
                 "2021",
                 "Guo Jingfei, He Landou, Huang Yao, Jiayu Sun, Li Ning, Liu Shuailiang, Tan Zhuo, Wang Tianchen, Yan Bingyan, Zhang Yue",
                 "Lenseng Lou, Xiaoqiang Wang",
-                "50 Min",
+                "25 Min/eps",
                 "south korea",
                 37
             )
@@ -195,7 +195,7 @@ object DataDummy {
                 "2021",
                 "Abdur Rasyid, Aci Resti, Adinia Wirasti, Arie Kriting, Asri Welas, Aurora Ribero, Beby Tsabina, Bene Dion, Boris, Dodit Mulyanto, Endhita, Ernest Prakasa, Gilang Bhaskara, Gisella Anastasya, Kevin Julio, Kiky Saputri, Nadya Arina, Randhika Jamil, Stella Cornelia, Yusril Fahriza",
                 "",
-                " Min",
+                "30 Min/eps",
                 "indonesia",
                 8
             )
@@ -210,7 +210,7 @@ object DataDummy {
                 "2021",
                 "Anya Geraldine, Putri Marino, Reza Rahadian",
                 "Benni Setiawan",
-                " Min",
+                "30 Min/eps",
                 "indonesia",
                 14
             )
@@ -224,8 +224,8 @@ object DataDummy {
                 "Comedy, Drama, Series Indonesia",
                 "2021",
                 "Fatih Unru, Mawar Eva De Jongh, Antonia Blanco Jr",
-                "",
-                " Min",
+                "Fatih",
+                "30 Min/eps",
                 "indonesia",
                 10
             )
@@ -240,7 +240,7 @@ object DataDummy {
                 "2021",
                 "Aghniny Haque, Annette Edoarda, Bryan Andrew, Ciccio Manassero, Dea Panendra, Dian Sidik, Egy Fedly, Imelda Therin. Yasamin Jasem, Jessica Merriel, Joshua Suherman, Muthia Datau, Nizar Umar, Omar Daniel, Putri Ayudya, Rania Putrisari, Rowiena Oemboh, Sahira Anjani, Shareefa Daanish, Tina Ross, Yati Surachman",
                 "",
-                "15 Min",
+                "20 Min/eps",
                 "indonesia",
                 8
             )
@@ -255,7 +255,7 @@ object DataDummy {
                 "2021",
                 "Bethany Antonia, Cush Jumbo, Daniel Francis, James Nesbitt, Jo Joyner, Richard Armitage, Sarah Parish, Youssef Kerkour",
                 "Harlan Coben",
-                "53 Min",
+                "34 Min/eps",
                 "britain",
                 8
             )
@@ -270,7 +270,7 @@ object DataDummy {
                 "2021",
                 "Alexander Karim, Anna Friel, Helen Behan, Letitia Hector, Nina Yndis, Olivia Grant, Peter Stormare, Shaq B. Grant",
                 "Adi Hasak",
-                "30 Min",
+                "30 Min/eps",
                 "SE",
                 8
             )
@@ -285,7 +285,7 @@ object DataDummy {
                 "2021",
                 "Cristian López, Gorka Otxoa, Héctor Gozalbo, Iñaki Ardanaz, León Martínez, Macarena García, María Romanillos, Patricia Iserte, Pau Gimeno",
                 "David Oliva, Fernando González Molina, Ruth García",
-                "50 Min",
+                "40 Min/eps",
                 "ES",
                 10
             )
@@ -300,7 +300,7 @@ object DataDummy {
                 "2021",
                 "Billy Preston, George Harrison, George Martin, Glyn Johns, John Lennon, Mal Evans, Michael Lindsay-Hogg, Paul McCartney, Ringo Starr, Yoko Ono",
                 "Peter Jackson",
-                " Min",
+                "30 Min/eps",
                 "Great Britain, NZ, US",
                 10
             )
@@ -315,7 +315,7 @@ object DataDummy {
                 "2021",
                 "actor",
                 "Mizuhashi Fumie",
-                "120 Min",
+                "45 Min/eps",
                 "Japan",
                 8
             )

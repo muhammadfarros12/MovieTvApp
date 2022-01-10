@@ -12,6 +12,7 @@
         android:theme="@style/Theme.MovieTVAppSubmissionBAJP.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -24,7 +25,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <include layout="@layout/content_detail" />
+        <include android:id="@+id/detail_content" layout="@layout/content_detail" />
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
