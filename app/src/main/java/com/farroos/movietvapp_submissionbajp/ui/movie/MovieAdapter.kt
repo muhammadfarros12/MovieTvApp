@@ -3,28 +3,25 @@ package com.farroos.movietvapp_submissionbajp.ui.movie
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ItemRecycleviewBinding
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
 import com.farroos.movietvapp_submissionbajp.utility.loadImage
 
-class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private var listMovies = ArrayList<MovieTvShowEntity>()
 
-    fun setMovie(movies: List<MovieTvShowEntity>?){
+    fun setMovie(movies: List<MovieTvShowEntity>?) {
         if (movies == null) return
         this.listMovies.clear()
         this.listMovies.addAll(movies)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemRecycleviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRecycleviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -35,9 +32,10 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = listMovies.size
 
-    inner class ViewHolder(private val binding:ItemRecycleviewBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: MovieTvShowEntity){
-            with(binding){
+    inner class ViewHolder(private val binding: ItemRecycleviewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(movie: MovieTvShowEntity) {
+            with(binding) {
                 txtTitle.text = movie.title
                 txtGenre.text = movie.genre
                 txtDurasi.text = movie.duration

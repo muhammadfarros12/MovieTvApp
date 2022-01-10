@@ -1,11 +1,8 @@
 package com.farroos.movietvapp_submissionbajp.ui.detail
 
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ActivityDetailBinding
 import com.farroos.movietvapp_submissionbajp.databinding.ContentDetailBinding

@@ -1,13 +1,12 @@
 package com.farroos.movietvapp_submissionbajp.ui.movie
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment() {
@@ -30,14 +29,17 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (activity != null){
-            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MovieViewModel::class.java]
+        if (activity != null) {
+            val viewModel = ViewModelProvider(
+                this,
+                ViewModelProvider.NewInstanceFactory()
+            )[MovieViewModel::class.java]
             val movie = viewModel.getMovie()
 
             val movieAdapter = MovieAdapter()
             movieAdapter.setMovie(movie)
 
-            with(binding.rvMovie){
+            with(binding.rvMovie) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = movieAdapter

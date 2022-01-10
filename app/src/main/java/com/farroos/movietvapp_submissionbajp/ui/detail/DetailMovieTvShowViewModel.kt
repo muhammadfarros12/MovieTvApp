@@ -1,6 +1,5 @@
 package com.farroos.movietvapp_submissionbajp.ui.detail
 
-import android.provider.ContactsContract
 import androidx.lifecycle.ViewModel
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.utility.DataDummy
@@ -24,8 +23,8 @@ class DetailMovieTvShowViewModel : ViewModel() {
         }
 
         val tvShowEntities = DataDummy.generateDummyTvShow()
-        for (tvShow in tvShowEntities){
-            if (tvShow.id == id){
+        for (tvShow in tvShowEntities) {
+            if (tvShow.id == id) {
                 movieTvShowEntity = tvShow
             }
         }

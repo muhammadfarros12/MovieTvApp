@@ -1,14 +1,16 @@
 package com.farroos.movietvapp_submissionbajp.ui.splashScreen
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.ui.home.HomeActivity
 import com.farroos.movietvapp_submissionbajp.utility.DELAY_TIME
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

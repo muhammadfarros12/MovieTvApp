@@ -1,32 +1,30 @@
 package com.farroos.movietvapp_submissionbajp.ui.tvshow
 
 import android.content.Intent
-import android.gesture.GestureLibraries
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ItemRecycleviewBinding
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
 import com.farroos.movietvapp_submissionbajp.utility.loadImage
 
-class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
+class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
 
     private val listTvShows = ArrayList<MovieTvShowEntity>()
 
-    fun setTvShows(tvShow: List<MovieTvShowEntity>?){
-        if (tvShow != null){
+    fun setTvShows(tvShow: List<MovieTvShowEntity>?) {
+        if (tvShow != null) {
             this.listTvShows.clear()
             this.listTvShows.addAll(tvShow)
         }
     }
 
 
-    inner class ViewHolder(private val binding: ItemRecycleviewBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(tvShow: MovieTvShowEntity){
-            with(binding){
+    inner class ViewHolder(private val binding: ItemRecycleviewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(tvShow: MovieTvShowEntity) {
+            with(binding) {
                 txtTitle.text = tvShow.title
                 txtDurasi.text = tvShow.duration
                 txtGenre.text = tvShow.genre
@@ -48,7 +46,8 @@ class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowAdapter.ViewHolder {
-        val binding = ItemRecycleviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRecycleviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
