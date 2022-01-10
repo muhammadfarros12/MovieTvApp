@@ -15,4 +15,5 @@
     <string name="deskripsi">Deskripsi</string>
     <string name="actor">Actor :</string>
     <string name="director">Director :</string>
+    <string name="movietvapp">MovieTvApp</string>
 </resources>

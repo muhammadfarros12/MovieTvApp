@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.ui.home.HomeActivity
+import com.farroos.movietvapp_submissionbajp.utility.DELAY_TIME
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, DELAY_TIME)
     }
 
 }

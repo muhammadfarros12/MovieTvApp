@@ -3,6 +3,7 @@ package com.farroos.movietvapp_submissionbajp.ui.movie
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -10,6 +11,7 @@ import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ItemRecycleviewBinding
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
+import com.farroos.movietvapp_submissionbajp.utility.loadImage
 
 class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
@@ -40,9 +42,10 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
                 txtGenre.text = movie.genre
                 txtDurasi.text = movie.duration
 
-                Glide.with(itemView.context)
+                /*Glide.with(itemView.context)
                     .load(movie.imagePath)
-                    .into(imgPoster)
+                    .into(imgPoster)*/
+                imgPoster.loadImage(movie.imagePath)
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
@@ -51,6 +54,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
                 }
 
             }
+
         }
 
     }

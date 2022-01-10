@@ -1,7 +1,7 @@
 package com.farroos.movietvapp_submissionbajp.data
 
 data class MovieTvShowEntity(
-    var id: String,
+    val id: String,
     var imagePath: Int,
     var title: String,
     var description: String,

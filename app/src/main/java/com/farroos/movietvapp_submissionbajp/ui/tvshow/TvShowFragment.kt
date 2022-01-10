@@ -13,15 +13,17 @@ import com.farroos.movietvapp_submissionbajp.databinding.FragmentTvShowBinding
 
 class TvShowFragment : Fragment() {
 
-    private lateinit var binding: FragmentTvShowBinding
+    private var _binding: FragmentTvShowBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTvShowBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentTvShowBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
-        return binding.root
+        return  binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +42,11 @@ class TvShowFragment : Fragment() {
                 adapter = tvShowAdapter
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

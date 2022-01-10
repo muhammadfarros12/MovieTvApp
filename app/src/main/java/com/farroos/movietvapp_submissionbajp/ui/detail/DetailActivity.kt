@@ -1,22 +1,21 @@
 package com.farroos.movietvapp_submissionbajp.ui.detail
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ActivityDetailBinding
 import com.farroos.movietvapp_submissionbajp.databinding.ContentDetailBinding
+import com.farroos.movietvapp_submissionbajp.utility.loadImage
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
     private lateinit var detailContentBinding: ContentDetailBinding
-
-    companion object {
-        const val EXTRA_TVMOVIE = "extra_tvmovie"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +53,12 @@ class DetailActivity : AppCompatActivity() {
             txtYear.text = movieTvShowEntity.year
             txtTitle.text = movieTvShowEntity.title
         }
-        Glide.with(this)
-            .load(movieTvShowEntity.imagePath)
-            .into(detailContentBinding.imgPoster)
+
+        detailContentBinding.imgPoster.loadImage(movieTvShowEntity.imagePath)
     }
 
+    companion object {
+        const val EXTRA_TVMOVIE = "extra_tvmovie"
+    }
 
 }

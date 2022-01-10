@@ -4,11 +4,13 @@ import android.content.Intent
 import android.gesture.GestureLibraries
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.farroos.movietvapp_submissionbajp.data.MovieTvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.ItemRecycleviewBinding
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
+import com.farroos.movietvapp_submissionbajp.utility.loadImage
 
 class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
 
@@ -29,9 +31,11 @@ class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.ViewHolder>() {
                 txtDurasi.text = tvShow.duration
                 txtGenre.text = tvShow.genre
 
-                Glide.with(itemView.context)
+                /*Glide.with(itemView.context)
                     .load(tvShow.imagePath)
-                    .into(binding.imgPoster)
+                    .into(binding.imgPoster)*/
+
+                imgPoster.loadImage(tvShow.imagePath)
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)

@@ -12,14 +12,17 @@ import com.farroos.movietvapp_submissionbajp.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment() {
 
-    private lateinit var binding: FragmentMovieBinding
+    private var _binding: FragmentMovieBinding? = null
+
+    private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentMovieBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMovieBinding.inflate(layoutInflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -39,8 +42,12 @@ class MovieFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = movieAdapter
             }
-
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
