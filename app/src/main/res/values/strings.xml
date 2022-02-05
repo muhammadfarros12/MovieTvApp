@@ -16,4 +16,7 @@
     <string name="actor">Actor :</string>
     <string name="director">Director :</string>
     <string name="movietvapp">MovieTvApp</string>
+
+
+    <string name="url_poster">https://image.tmdb.org/t/p/w500%s</string>
 </resources>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp">
+    app:cardCornerRadius="5dp"
+    android:id="@+id/card_view">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,32 +34,33 @@
             android:text="Title"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/txt_genre"
+            app:layout_constraintBottom_toTopOf="@+id/txt_realease_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_poster"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread" />
 
         <TextView
-            android:id="@+id/txt_genre"
+            android:id="@+id/txt_realease_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:text="genre"
-            app:layout_constraintBottom_toTopOf="@+id/txt_durasi"
+            android:textColor="@color/black"
+            android:text="realease Date"
+            app:layout_constraintBottom_toTopOf="@+id/vote_average"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/txt_title"
             app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
         <TextView
-            android:id="@+id/txt_durasi"
+            android:id="@+id/vote_average"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="50"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txt_genre"
-            app:layout_constraintTop_toBottomOf="@+id/txt_genre" />
+            app:layout_constraintStart_toStartOf="@+id/txt_realease_date"
+            app:layout_constraintTop_toBottomOf="@+id/txt_realease_date" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
