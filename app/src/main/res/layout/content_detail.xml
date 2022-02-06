@@ -60,7 +60,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rating :"
+                android:text="@string/rating"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/txt_rate"
                 app:layout_constraintStart_toStartOf="@+id/textView"

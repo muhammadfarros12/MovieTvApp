@@ -9,7 +9,7 @@ import com.farroos.movietvapp_submissionbajp.data.source.local.entity.DataModel
 import com.farroos.movietvapp_submissionbajp.databinding.ItemRecycleviewBinding
 import com.farroos.movietvapp_submissionbajp.ui.DataCallback
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
-import com.farroos.movietvapp_submissionbajp.utility.loadImage
+import com.farroos.movietvapp_submissionbajp.utility.constant.loadImage
 
 class MovieAdapter(private val callback: DataCallback) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {

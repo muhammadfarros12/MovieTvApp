@@ -1,4 +1,4 @@
-package com.farroos.movietvapp_submissionbajp.utility
+package com.farroos.movietvapp_submissionbajp.utility.constant
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

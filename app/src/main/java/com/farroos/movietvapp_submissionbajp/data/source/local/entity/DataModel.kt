@@ -5,10 +5,10 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DataModel(
-    var id: Int = 0,
-    var name: String? = null,
-    var desc: String? = null,
-    var poster: String? = null,
-    var rate: Double? = null,
-    var realeaseDate: String? = null
+    val id: Int = 0,
+    val name: String? = null,
+    val desc: String? = null,
+    val poster: String? = null,
+    val rate: Double? = null,
+    val realeaseDate: String? = null
 ) : Parcelable

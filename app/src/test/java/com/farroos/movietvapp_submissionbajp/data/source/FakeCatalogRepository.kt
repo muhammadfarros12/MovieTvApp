@@ -113,14 +113,4 @@ class FakeCatalogRepository(private val remoteDataSource: RemoteDataSource) :
         }
         return detailTvShow
     }
-
-    companion object {
-        @Volatile
-        private var instance: FakeCatalogRepository? = null
-
-        fun getInstance(remoteDataSource: RemoteDataSource): FakeCatalogRepository =
-            instance ?: synchronized(this) {
-                instance ?: FakeCatalogRepository(remoteDataSource)
-            }
-    }
 }

@@ -11,14 +11,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeActivity : AppCompatActivity() {
 
-    companion object {
-        @StringRes
-        private val TAB_TITLES = intArrayOf(
-            R.string.tab_1,
-            R.string.tab_2,
-        )
-    }
-
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,5 +28,13 @@ class HomeActivity : AppCompatActivity() {
 
         supportActionBar?.elevation = 0f
 
+    }
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.tab_1,
+            R.string.tab_2,
+        )
     }
 }
