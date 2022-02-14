@@ -5,27 +5,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.farroos.movietvapp_submissionbajp.data.source.local.entity.DataModel
+import com.farroos.movietvapp_submissionbajp.data.source.local.entity.TvShowEntity
 import com.farroos.movietvapp_submissionbajp.databinding.FragmentTvShowBinding
-import com.farroos.movietvapp_submissionbajp.ui.DataCallback
 import com.farroos.movietvapp_submissionbajp.ui.detail.DetailActivity
-import com.farroos.movietvapp_submissionbajp.utility.TYPE_TVSHOW
+import com.farroos.movietvapp_submissionbajp.ui.home.HomeViewModel
+import com.farroos.movietvapp_submissionbajp.utility.constant.TYPE_TVSHOW
 import com.farroos.movietvapp_submissionbajp.viewmodel.ViewModelFactory
+import com.farroos.movietvapp_submissionbajp.vo.Status
+import dagger.Module
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-
-class TvShowFragment : Fragment(), DataCallback {
+@Module
+class TvShowFragment : DaggerFragment(), TvShowCallback {
 
     private var _binding: FragmentTvShowBinding? = null
     private val binding get() = _binding!!
 
-    private var _viewModel: TvShowViewModel? = null
-    private val viewModel get() = _viewModel as TvShowViewModel
+    private var _viewModel: HomeViewModel? = null
+    private val viewModel get() = _viewModel as HomeViewModel
 
     private var _mAdapter: TvShowAdapter? = null
     private val mAdapter get() = _mAdapter as TvShowAdapter
+
+    @Inject
+    lateinit var factory: ViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,33 +45,54 @@ class TvShowFragment : Fragment(), DataCallback {
 
         _mAdapter = TvShowAdapter(this@TvShowFragment)
 
-        val viewModelFactory = ViewModelFactory.getInstance()
-        _viewModel = activity?.let { ViewModelProvider(it, viewModelFactory) }
-            ?.get(TvShowViewModel::class.java)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpRecyclerView()
 
-        /*if (activity != null) {
-            val viewModel = ViewModelProvider(
-                this,
-                ViewModelProvider.NewInstanceFactory()
-            )[TvShowViewModel::class.java]
-            val tvShow = viewModel.getTvShow()
+        activity?.let { setupViewModel(it) }
+        observeTvShow()
+    }
 
-            val tvShowAdapter = TvShowAdapter()
-            //tvShowAdapter.setTvShows(tvShow)*/
-
+    private fun setUpRecyclerView() {
         with(binding.rvTvShow) {
             layoutManager = LinearLayoutManager(context)
-            setHasFixedSize(true)
             adapter = mAdapter
         }
-        viewModel.getTvShow().observe(viewLifecycleOwner, {
-            mAdapter.setTvShows(it)
+    }
+
+    private fun setupViewModel(fragmentActivity: FragmentActivity) {
+        _viewModel = ViewModelProvider(fragmentActivity, factory)[HomeViewModel::class.java]
+    }
+
+    private fun observeTvShow() {
+        viewModel.getTvShow().observe(viewLifecycleOwner, Observer { listTvShow ->
+            if (listTvShow != null) {
+                when (listTvShow.status) {
+                    Status.LOADING -> binding.progressBar.visibility = View.VISIBLE
+                    Status.SUCCESS -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.rvTvShow.adapter?.let { adapter ->
+                            when (adapter) {
+                                is TvShowAdapter -> {
+                                    adapter.submitList(listTvShow.data)
+                                    adapter.notifyDataSetChanged()
+                                }
+                            }
+                        }
+                    }
+                    Status.ERROR -> {
+                        binding.progressBar.visibility = View.GONE
+                        Toast.makeText(
+                            context,
+                            "Check your internet connection",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            }
         })
     }
 
@@ -71,10 +101,10 @@ class TvShowFragment : Fragment(), DataCallback {
         _binding = null
     }
 
-    override fun onItemClicked(data: DataModel) {
+    override fun onItemClicked(data: TvShowEntity) {
         startActivity(
             Intent(context, DetailActivity::class.java)
-                .putExtra(DetailActivity.EXTRA_DATA, data.id)
+                .putExtra(DetailActivity.EXTRA_DATA, data.tvShowId)
                 .putExtra(DetailActivity.EXTRA_TYPE, TYPE_TVSHOW)
         )
     }

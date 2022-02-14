@@ -3,17 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/bg_rate.xml" value="0.169" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_broken_image_black.xml" value="0.2328125" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_error.xml" value="0.14270833333333333" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_favorite_grey.xml" value="0.1555" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_favorite_red.xml" value="0.1555" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_loading.xml" value="0.14270833333333333" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/drawable/ic_refresh_black.xml" value="0.14270833333333333" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/activity_favorite.xml" value="0.15" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/activity_home.xml" value="0.1272644927536232" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/activity_splash_screen.xml" value="0.20520833333333333" />
-        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/content_detail.xml" value="0.33" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/content_detail.xml" value="0.29637760702524696" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/fragment_favorite_movie.xml" value="0.4531590413943355" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/fragment_favorite_tv_show.xml" value="0.1830065359477124" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/fragment_movie.xml" value="0.1272644927536232" />
-        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/fragment_tv_show.xml" value="0.33" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/fragment_tv_show.xml" value="0.2" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/item_favorite.xml" value="0.5" />
         <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/item_recycleview.xml" value="0.22" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/layout/progress_bar.xml" value="0.15625" />
+        <entry key="..\:/project/dicoding/AndroidJetpack/MovieTVAppSubmissionBAJP/app/src/main/res/menu/menu.xml" value="0.5" />
       </map>
     </option>
   </component>

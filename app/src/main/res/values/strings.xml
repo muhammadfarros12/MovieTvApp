@@ -6,6 +6,9 @@
     <string name="tab_1">Movie</string>
     <string name="tab_2">Tv Show</string>
 
+    <string name="tab_3">Favorite Movie</string>
+    <string name="tab_4">Favorite Tv Show</string>
+
     <string name="gambar_poster_film">gambar poster film</string>
     <string name="title">Title :</string>
     <string name="textview">TextView</string>
@@ -20,4 +23,11 @@
 
     <string name="url_poster">https://image.tmdb.org/t/p/w500%s</string>
     <string name="rating">Rating :</string>
+    <string name="favorite">Favorite</string>
+    <string name="detail">Detail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_7_8">7.8</string>
+    <string name="rilis">Rilis :</string>
+    <string name="nama_film">nama film</string>
 </resources>

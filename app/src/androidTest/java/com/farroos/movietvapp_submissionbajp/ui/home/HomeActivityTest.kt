@@ -7,6 +7,7 @@ import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.pressBack
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
@@ -37,32 +38,40 @@ class HomeActivityTest {
     }
 
     @Test
-    fun loadMovieTvShow() {onView(withId(R.id.rv_movie)).check(matches(isDisplayed()))
+    fun loadMovie() {onView(withId(R.id.rv_movie)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_movie)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
                 2
             )
         )
+        onView(withId(R.id.rv_movie)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                0,
+                click()
+            )
+        )
+        onView(withId(R.id.img_poster)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_description)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_rate)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_realease)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.tgl_favorite)).perform(click())
+        pressBack()
     }
 
     @Test
     fun loadTvShow() {
-        onView(withText("TV SHOW")).perform(click())
+        onView(withText(R.string.tab_2)).perform(click())
         onView(withId(R.id.rv_tvShow)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_tvShow)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
                 2
             )
         )
-    }
-
-
-    @Test
-    fun loadTvShowDetail() {
-        onView(withText("TV SHOW")).perform(click())
         onView(withId(R.id.rv_tvShow)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                0,
+                2,
                 click()
             )
         )
@@ -71,11 +80,15 @@ class HomeActivityTest {
         onView(withId(R.id.txt_description)).check(matches(isDisplayed()))
         onView(withId(R.id.txt_rate)).check(matches(isDisplayed()))
         onView(withId(R.id.txt_realease)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.tgl_favorite)).perform(click())
+        pressBack()
     }
 
     @Test
-    fun loadMovieDetail() {
-        onView(withId(R.id.rv_movie)).perform(
+    fun loadFavoriteMovie(){
+        onView(withId(R.id.favorite_menu)).perform(click())
+        onView(withId(R.id.rcv_favorite_movie)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
                 0,
                 click()
@@ -86,6 +99,29 @@ class HomeActivityTest {
         onView(withId(R.id.txt_description)).check(matches(isDisplayed()))
         onView(withId(R.id.txt_rate)).check(matches(isDisplayed()))
         onView(withId(R.id.txt_realease)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.tgl_favorite)).perform(click())
+        pressBack()
     }
 
+
+    @Test
+    fun loadFavoriteTvShow(){
+        onView(withId(R.id.favorite_menu)).perform(click())
+        onView(withText(R.string.tab_4)).perform(click())
+        onView(withId(R.id.rcv_favorite_tvshow)).perform(
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                0,
+                click()
+            )
+        )
+        onView(withId(R.id.img_poster)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_description)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_rate)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_realease)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.tgl_favorite)).perform(click())
+        pressBack()
+    }
 }

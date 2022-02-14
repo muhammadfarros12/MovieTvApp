@@ -82,7 +82,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rilis :"
+                android:text="@string/rilis"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/txt_realease"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -122,7 +122,7 @@
             android:padding="16dp">
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -135,7 +135,15 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
+                <ImageButton
+                    android:id="@+id/tgl_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/ic_favorite_grey"
+                    android:focusableInTouchMode="false" />
+
+            </RelativeLayout>
 
 
             <TextView

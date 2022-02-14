@@ -2,16 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.farroos.movietvapp_submissionbajp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ui.BaseApplication"
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MovieTVAppSubmissionBAJP"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/Theme.MovieTVAppSubmissionBAJP">
+        <activity
+            android:name=".ui.favorite.FavoriteActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.splashScreen.SplashScreenActivity"
             android:exported="true"
@@ -34,9 +38,7 @@
         </activity>
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

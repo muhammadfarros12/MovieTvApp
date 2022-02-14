@@ -8,7 +8,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.farroos.movietvapp_submissionbajp.R
 import com.farroos.movietvapp_submissionbajp.ui.home.HomeActivity
-import com.farroos.movietvapp_submissionbajp.utility.DELAY_TIME
+import com.farroos.movietvapp_submissionbajp.utility.constant.DELAY_TIME
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
